@@ -15,6 +15,7 @@ const fortniteTasks = [
 	"Hide",
 	"Drink shield potion",
 	"Apply bandages",
+	"Get to eye of storm",
 	"Kill a player",
 	"Build shelter",
 	"Die"
