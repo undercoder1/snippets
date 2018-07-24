@@ -1,7 +1,6 @@
 //Zelda Ipsum generator
 //https://github.com/undercoder1/snippets
 
-
 const genericWords = [
 	"i", "a", "am", "and", "the", "this", "that", "it", "is"
 ];
@@ -22,22 +21,16 @@ allWords.sort(function(a, b){
 const shortestWordLength = allWords[0].length;
 const longestWordLength = allWords[allWords.length -1].length;
 const lexicon = {};
-// console.log(allWords);
-// console.log(shortestWordLength);
-// console.log(longestWordLength);
 
 for (word = 0; word < allWords.length; word++) {
 	!([allWords[word].length] in lexicon) && (lexicon[allWords[word].length] = [])
 	lexicon[allWords[word].length].push(allWords[word]);
 }
-//console.dir(lexicon);
 
 function randomWord(wordLength) {
 	return lexicon[wordLength][Math.floor(Math.random()*lexicon[wordLength].length)];
 }
-//console.log(randomWord(7));
 
-//random sentence (5 words)
 const sentenceStructure = [3,7,6,5,6];
 function randomSentence(structure) {
 	var sentence = "";
@@ -47,7 +40,7 @@ function randomSentence(structure) {
 	}
 	return sentence;
 }
-//console.log(randomSentence(sentenceStructure));
+
 const maxWords = 8;
 const minWords = 3;
 function sentenceLength(){
@@ -59,8 +52,6 @@ function buildSentence() {
 	const structure = [...Array(sentenceLength())].map(()=>{return shortestWordLength+ Math.floor(Math.random()*((longestWordLength-shortestWordLength)+1))});
 	return randomSentence(structure);
 }
-
-//console.log(buildSentence() + " " + buildSentence());
 
 function buildParagraph(sentences) {
 	var paragraph = "";
